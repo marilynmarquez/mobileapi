@@ -1,0 +1,79 @@
+<scenario>
+  <name>Test.scenario</name>
+  <maxRuleFirings>100000</maxRuleFirings>
+  <globals/>
+  <fixtures>
+    <fact-data>
+      <type>FlightInfo</type>
+      <fieldData>
+        <field-data>
+          <name>ETD</name>
+          <value>2017-11-30 12:00:00</value>
+          <nature>4</nature>
+        </field-data>
+        <field-data>
+          <name>aircraftType</name>
+          <value>ATR</value>
+          <nature>4</nature>
+        </field-data>
+        <field-data>
+          <name>route</name>
+          <value>Neighbor Island</value>
+          <nature>4</nature>
+        </field-data>
+      </fieldData>
+      <name>fi</name>
+      <isModify>false</isModify>
+    </fact-data>
+    <execution-trace>
+      <executionTimeResult>794</executionTimeResult>
+      <numberOfRulesFired>4</numberOfRulesFired>
+    </execution-trace>
+    <expect-fact>
+      <fieldValues>
+        <expect-field>
+          <fieldName>ETD</fieldName>
+          <expected>2017-11-30 12:00:00</expected>
+          <successResult>true</successResult>
+          <explanation>[fi] field [ETD] was [2017-11-30 12:00:00].</explanation>
+          <operator>==</operator>
+          <nature>1</nature>
+        </expect-field>
+        <expect-field>
+          <fieldName>boardingStartTime</fieldName>
+          <expected>2017-11-30 11:15:00</expected>
+          <actualResult>2017-11-30 11:35:00</actualResult>
+          <successResult>false</successResult>
+          <explanation>[fi] field [boardingStartTime] was [2017-11-30 11:35:00] expected [2017-11-30 11:15:00].</explanation>
+          <operator>==</operator>
+          <nature>1</nature>
+        </expect-field>
+        <expect-field>
+          <fieldName>boardingCloseTime</fieldName>
+          <expected>2017-11-30 11:40:00</expected>
+          <actualResult>2017-11-30 11:45:00</actualResult>
+          <successResult>false</successResult>
+          <explanation>[fi] field [boardingCloseTime] was [2017-11-30 11:45:00] expected [2017-11-30 11:40:00].</explanation>
+          <operator>==</operator>
+          <nature>1</nature>
+        </expect-field>
+      </fieldValues>
+      <name>fi</name>
+      <anonymous>false</anonymous>
+    </expect-fact>
+  </fixtures>
+  <lastRunResult>2017-12-01 01:57:53.725 UTC</lastRunResult>
+  <rules/>
+  <inclusive>false</inclusive>
+  <packageName>ha.csteam.boardingwindow</packageName>
+  <imports>
+    <imports>
+      <org.drools.workbench.models.datamodel.imports.Import>
+        <type>java.time.LocalDateTime</type>
+      </org.drools.workbench.models.datamodel.imports.Import>
+    </imports>
+  </imports>
+  <ksessions>
+    <string></string>
+  </ksessions>
+</scenario>

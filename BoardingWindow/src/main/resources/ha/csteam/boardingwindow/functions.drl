@@ -1,0 +1,39 @@
+package ha.csteam.boardingwindow;
+
+import java.time.LocalDateTime; 
+import java.time.format.DateTimeFormatter; 
+
+
+/*Private Function*/
+function String boardingTime( int minutes, LocalDateTime dateTime)
+{
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+    return dateTime.plusMinutes(minutes).format(formatter); 
+}
+
+/*Referenced from GDT*/
+function FlightInfo setBoardingTime( FlightInfo fi)
+{
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+    LocalDateTime etd = LocalDateTime.parse(fi.getETD(), formatter); 
+    
+    fi.setBoardingStartTime(boardingTime( fi.getStartTimeMinutes(), etd)); 
+    fi.setBoardingCloseTime(boardingTime( fi.getCloseTimeMinutes(), etd));
+    
+    return fi; 
+}
+
+/*Unused*/
+function FlightInfo setDefault( FlightInfo fi )
+{
+    if( fi.getAircraftType() == null)
+        fi.setAircraftType( "Default" ); 
+    if( fi.getOrigin() == null)
+        fi.setOrigin( "Default" ); 
+    if( fi.getDestination() == null)
+        fi.setDestination( "Default" ); 
+    if( fi.getRoute() == null)
+        fi.setRoute( "Default" );
+    
+    return fi; 
+}

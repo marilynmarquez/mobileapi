@@ -1,0 +1,43 @@
+package ha.csteam.boardingwindow;
+
+import java.lang.Number;
+
+rule "Aircraft Type Default"
+	dialect "mvel"
+	when
+		fi : FlightInfo( aircraftType == null )
+	then
+		modify( fi ) {
+				setAircraftType( "Default" )
+		}
+end
+
+rule "Origin Default"
+	dialect "mvel"
+	when
+		fi : FlightInfo( origin == null )
+	then
+		modify( fi ) {
+				setOrigin( "Default" )
+		}
+end
+
+rule "Destination Default"
+	dialect "mvel"
+	when
+		fi : FlightInfo( destination == null )
+	then
+		modify( fi ) {
+				setDestination( "Default" )
+		}
+end
+
+rule "Route Default"
+	dialect "mvel"
+	when
+		fi : FlightInfo( route == null )
+	then
+		modify( fi ) {
+				setRoute( "Default" )
+		}
+end
