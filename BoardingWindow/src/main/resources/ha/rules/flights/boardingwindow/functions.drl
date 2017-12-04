@@ -1,4 +1,4 @@
-package ha.csteam.boardingwindow;
+package ha.rules.flights.boardingwindow;
 
 import java.time.LocalDateTime; 
 import java.time.format.DateTimeFormatter; 

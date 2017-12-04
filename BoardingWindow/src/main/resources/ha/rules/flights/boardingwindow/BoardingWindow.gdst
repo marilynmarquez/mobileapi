@@ -158,7 +158,7 @@
   <imports>
     <imports/>
   </imports>
-  <packageName>ha.csteam.boardingwindow</packageName>
+  <packageName>ha.rules.flights.boardingwindow</packageName>
   <tableFormat>EXTENDED_ENTRY</tableFormat>
   <hitPolicy>NONE</hitPolicy>
   <data>

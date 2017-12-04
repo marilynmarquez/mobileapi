@@ -65,7 +65,7 @@
   <lastRunResult>2017-12-01 01:57:53.725 UTC</lastRunResult>
   <rules/>
   <inclusive>false</inclusive>
-  <packageName>ha.csteam.boardingwindow</packageName>
+  <packageName>ha.rules.flights.boardingwindow</packageName>
   <imports>
     <imports>
       <org.drools.workbench.models.datamodel.imports.Import>
